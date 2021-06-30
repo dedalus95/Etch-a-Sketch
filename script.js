@@ -5,10 +5,11 @@ const container = document.getElementById('container');
 
 
 
-container.style.display = 'grid';
-container.style.gridTemplateColumns = 'repeat(16, 1fr)';
-container.style.gridTemplateRows = 'repeat(16, 1fr)';
+
 container.style.width = '960px';
+container.style.height = '960px';
+
+
 container.style.margin = 'auto';
 
 btn.style.width = '200px';
@@ -33,8 +34,6 @@ let numberOfSquares;
 
         numberOfSquares = prompt('How many squares for side?');
     
-        container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 1fr)`;
-        container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr)`;
 
         function createDiv() {
 
@@ -42,8 +41,8 @@ let numberOfSquares;
             
             
             div.style.background = 'pink';
-            div.style.width = '50px';
-            div.style.height = '50px';
+            div.style.width = '3px';
+            div.style.height = '3px';
             div.style.border = 'solid';
             div.style.borderColor = 'rgb(200,200,200)';
             div.addEventListener('mousemove', function() {
@@ -52,8 +51,12 @@ let numberOfSquares;
             
             container.appendChild(div);
             }
+            container.style.display = 'grid';
 
-            for (i = 0; i < numberOfSquares; i++) {
+            container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 3fr)`;
+            container.style.gridTemplateRows = `repeat(${numberOfSquares}, 3fr)`;
+
+            for (i = 0; i < (numberOfSquares * numberOfSquares); i++) {
                 createDiv();
         }
     
