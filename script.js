@@ -25,27 +25,9 @@ let numberOfSquares;
 
 
 
-function createDiv() {
 
-    const div = document.createElement('div');
     
-    
-    div.style.background = 'pink';
-    div.style.width = '50px';
-    div.style.height = '50px';
-    div.style.border = 'solid';
-    div.style.borderColor = 'rgb(200,200,200)';
-    div.addEventListener('mousemove', function() {
-        div.style.background = 'black';
-    });
-    
-    container.appendChild(div);
-    }
-    
-    for (i = 0; i < 256; i++) {
-            createDiv();
-    }
-
+   
 
     btn.addEventListener('click', function() {
 
@@ -53,6 +35,28 @@ function createDiv() {
     
         container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 1fr)`;
         container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr)`;
+
+        function createDiv() {
+
+            const div = document.createElement('div');
+            
+            
+            div.style.background = 'pink';
+            div.style.width = '50px';
+            div.style.height = '50px';
+            div.style.border = 'solid';
+            div.style.borderColor = 'rgb(200,200,200)';
+            div.addEventListener('mousemove', function() {
+                div.style.background = 'black';
+            });
+            
+            container.appendChild(div);
+            }
+
+            for (i = 0; i < numberOfSquares; i++) {
+                createDiv();
+        }
+    
     
     });
 
