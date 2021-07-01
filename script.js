@@ -8,12 +8,12 @@ const btnReload = document.createElement('button');
 
 
 container.style.display = 'grid';
-container.style.gridTemplateColumns = 'repeat(16, 1fr)';
-container.style.gridTemplateRows = 'repeat(16, 1fr)';
-container.style.width = '600px';
-container.style.height = '600px';
-container.style.margin = 'auto';
-container.style.border = 'solid';
+// container.style.gridTemplateColumns = 'repeat(16, 1fr)';
+// container.style.gridTemplateRows = 'repeat(16, 1fr)';
+container.style.width = '605px';
+container.style.height = '605px';
+container.style.border = 'groove';
+container.style.gap = '-30px';
 
 btn.style.width = '200px';
 btn.style.height = '80px';
@@ -22,7 +22,7 @@ btn.style.color = 'pink';
 btn.style.fontFamily = 'Times new roman';
 btn.style.fontSize = '20px';
 btn.style.background = 'black';
-btn.style.margin = '50px';
+btn.style.margin = 'auto';
 
 btnReload.style.width = '200px';
 btnReload.textContent = 'CLEAR GRID';
@@ -31,7 +31,7 @@ btnReload.style.color = 'pink';
 btnReload.style.fontFamily = 'Times new roman';
 btnReload.style.fontSize = '20px';
 btnReload.style.background = 'black';
-btnReload.style.margin = '50px';
+btnReload.style.margin = 'auto';
 
 container.before(btn);
 container.before(btnReload)
@@ -53,12 +53,15 @@ function createDiv() {
     
     
     div.style.background = 'pink';
-    div.style.width = '50px';
-    div.style.height = '50px';
+    div.style.width = '300px';
+    div.style.height = '300px';
     div.style.border = 'solid';
     div.style.borderColor = 'rgb(200,200,200)';
-    div.addEventListener('mousemove', function() {
-        div.style.background = 'black';
+  
+
+    div.addEventListener('mousemove', function(colors) {
+         colors =  MouseEvent.clientX;
+        div.style.background = `rgb(24,143,243)`;
     });
     
     container.appendChild(div);
@@ -66,7 +69,6 @@ function createDiv() {
     
     }
    
-    
 
 
     btn.addEventListener('click', function() {
@@ -80,8 +82,8 @@ function createDiv() {
             return false;
         }
     
-        container.style.gridTemplateColumns = `repeat(${numberOfSquares}, minmax(5px, 1000px))`;
-        container.style.gridTemplateRows = `repeat(${numberOfSquares}, minmax(5px, 1000px))`;
+        container.style.gridTemplateColumns = `repeat(${numberOfSquares}, minmax(1px, 300px))`;
+        container.style.gridTemplateRows = `repeat(${numberOfSquares}, minmax(1px, 300px))`;
 
         
 
