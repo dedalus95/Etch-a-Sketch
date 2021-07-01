@@ -6,8 +6,12 @@ const container = document.getElementById('container');
 
 
 container.style.display = 'grid';
-container.style.gridTemplateColumns = 'repeat(16, 1fr)';
-container.style.gridTemplateRows = 'repeat(16, 1fr)';
+container.style.gridTemplateColumns = `repeat(16, 1fr)`;
+container.style.gridTemplateRows = `repeat(16, 1fr)`;
+
+
+
+
 container.style.width = '960px';
 container.style.margin = 'auto';
 
@@ -23,7 +27,7 @@ btn.style.margin = '50px';
 container.before(btn);
 let numberOfSquares;
 
-
+// create a grid from scratch
 
 function createDiv() {
 
@@ -40,21 +44,31 @@ function createDiv() {
     });
     
     container.appendChild(div);
-    }
+
+    numberOfSquares = prompt('How many squares for side?');
+
+    container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr)`;
+
     
-    for (i = 0; i < numberOfSquares*numberOfSquares; i++) {
-            createDiv();
-    }
+    // ask for the number of rows and columns
+   
 
 
-    btn.addEventListener('click', function() {
+}
 
-        numberOfSquares = prompt('How many squares for side?');
+for (i = 0; i < numberOfSquares * numberOfSquares; i++) {
     
-        container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 1fr)`;
-        container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr)`;
+    createDiv();
+ 
+ }
 
-    });
+     
+
+
+     btn.addEventListener('click', createDiv);
+
+   
 
 
 
