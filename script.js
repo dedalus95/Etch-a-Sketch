@@ -42,7 +42,7 @@ function createDiv() {
     container.appendChild(div);
     }
     
-    for (i = 0; i < 256; i++) {
+    for (i = 0; i < numberOfSquares*numberOfSquares; i++) {
             createDiv();
     }
 
