@@ -5,11 +5,35 @@ const container = document.getElementById('container');
 
 
 
+container.style.display = 'grid';
+container.style.gridTemplateColumns = `repeat(16, 1fr)`;
+container.style.gridTemplateRows = `repeat(16, 1fr)`;
+
+// create the default grid
+
+function createFirstSketch() {
+
+    const div = document.createElement('div');
+    
+    
+    div.style.background = 'pink';
+    div.style.width = '50px';
+    div.style.height = '50px';
+    div.style.border = 'solid';
+    div.style.borderColor = 'rgb(200,200,200)';
+    div.addEventListener('mousemove', function() {
+        div.style.background = 'black';
+    });
+    
+    container.appendChild(div);
+    }
+    for (i = 0; i < 256; i++) {
+        createFirstSketch();
+}
+
+
 
 container.style.width = '960px';
-container.style.height = '960px';
-
-
 container.style.margin = 'auto';
 
 btn.style.width = '200px';
@@ -24,44 +48,51 @@ btn.style.margin = '50px';
 container.before(btn);
 let numberOfSquares;
 
+// create a grid from scratch
 
+function createDiv() {
 
-
+    const div = document.createElement('div');
     
+    
+    div.style.background = 'pink';
+    div.style.width = '50px';
+    div.style.height = '50px';
+    div.style.border = 'solid';
+    div.style.borderColor = 'rgb(200,200,200)';
+    div.addEventListener('mousemove', function() {
+        div.style.background = 'black';
+    });
+    
+    container.appendChild(div);
+
    
 
-    btn.addEventListener('click', function() {
+    }
 
-        numberOfSquares = prompt('How many squares for side?');
+    // ask for the number of rows and columns
     
+function askNumberOfSquares() {
 
-        function createDiv() {
+    sessionStorage.clear();
 
-            const div = document.createElement('div');
-            
-            
-            div.style.background = 'pink';
-            div.style.width = '3px';
-            div.style.height = '3px';
-            div.style.border = 'solid';
-            div.style.borderColor = 'rgb(200,200,200)';
-            div.addEventListener('mousemove', function() {
-                div.style.background = 'black';
-            });
-            
-            container.appendChild(div);
-            }
-            container.style.display = 'grid';
+    numberOfSquares = prompt('How many squares for side?');
 
-            container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 3fr)`;
-            container.style.gridTemplateRows = `repeat(${numberOfSquares}, 3fr)`;
+    container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr)`;
 
-            for (i = 0; i < (numberOfSquares * numberOfSquares); i++) {
-                createDiv();
-        }
-    
-    
-    });
+    for (i = 0; i < numberOfSquares * numberOfSquares; i++) {
+        createDiv();
+}
+
+
+
+     
+}
+
+     btn.addEventListener('click', askNumberOfSquares);
+
+   
 
 
 
