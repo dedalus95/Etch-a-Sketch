@@ -54,7 +54,6 @@ function createDiv() {
         container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 1fr)`;
         container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr)`;
 
-    
     });
 
 
