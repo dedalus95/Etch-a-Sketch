@@ -1,38 +1,14 @@
 
-const btn = document.createElement('button');
+const btn = document.getElementById('button-set-squares');
 const container = document.getElementById('container');
-const btnReload = document.createElement('button');
+const btnReload = document.getElementById('button-clear');
 let hue = 0;
-container.before(btn);
-container.before(btnReload);
+
 
 
 
 document.body.style.backgroundColor = '#00703C';
-container.style.display = 'grid';
-container.style.width = '700px';
-container.style.height = '700px';
-container.style.border = 'solid';
-container.style.margin = '100px auto auto auto';
-container.style.background = 'white';
 
-btn.style.width = '200px';
-btn.style.height = '80px';
-btn.textContent = 'Set number of squares';
-btn.style.color = '00703C';
-btn.style.fontFamily = 'Sans serif';
-btn.style.fontSize = '20px';
-btn.style.background = 'white';
-btn.style.margin = '50px';
-
-btnReload.style.width = '200px';
-btnReload.textContent = 'Clear grid';
-btnReload.style.height = '80px';
-btnReload.style.color = '00703C';
-btnReload.style.fontFamily = 'Sans serif';
-btnReload.style.fontSize = '20px';
-btnReload.style.background = 'white';
-btnReload.style.margin = '50px';
 
 
 let numberOfSquares;
@@ -45,10 +21,10 @@ function createDiv() {
 
     
     div.style.background = 'white';
-    // div.style.width = '300px';
-    // div.style.height = '300px';
+    
     div.style.border = 'groove';
-    div.style.borderColor = 'rgb(240,240,240)';
+    div.style.borderWidth = '1px';
+    div.style.borderColor = 'rgb(250,250,250)';
   
 
   
